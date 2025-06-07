@@ -13,6 +13,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { portfolioData } from "@/data/portfolio-data";
+import { logEvent } from "firebase/analytics";
 import {
   ArrowRight,
   ArrowUp,
@@ -37,6 +38,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { analytics } from "./utils/firebase";
 
 const SectionHeader = ({
   icon: Icon,
@@ -773,7 +775,9 @@ export default function Portfolio() {
                       <h4 className="font-semibold text-white">
                         Ken Wuttisasiwat - Resume
                       </h4>
-                      <Badge className="bg-blue-600 text-white">PDF</Badge>
+                      <Badge className="bg-blue-600 text-white">
+                        Google Doc
+                      </Badge>
                     </div>
                     <p className="mb-4 text-sm text-gray-300">
                       Senior Full-Stack Engineer with 6+ years of experience,
@@ -783,12 +787,20 @@ export default function Portfolio() {
                       <Button
                         size="sm"
                         className="bg-white font-medium text-black hover:bg-gray-200"
-                        onClick={() =>
+                        onClick={() => {
+                          if (analytics) {
+                            logEvent(analytics, "resume_view_online_click", {
+                              label: "Resume View Online Button",
+                              location: "Contact Section",
+                            });
+                          }
+
+                          // Open the resume
                           window.open(
                             portfolioData.personalInfo.resumeUrl,
                             "_blank",
-                          )
-                        }
+                          );
+                        }}
                       >
                         <ExternalLink className="mr-2 h-4 w-4" />
                         View Online

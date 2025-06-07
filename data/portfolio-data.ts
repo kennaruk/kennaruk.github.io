@@ -25,17 +25,6 @@ export const portfolioData = {
   ],
   experience: [
     {
-      title: "IT College Support Services Student Assistant",
-      company: "California State University, Fullerton",
-      period: "May 2025 - Present",
-      location: "Fullerton, California",
-      highlights: [
-        "Configured and deployed on-premise HPC server for academic use",
-        "Automated internal workflows and documentation",
-        "Linux server administration and network troubleshooting",
-      ],
-    },
-    {
       title: "Senior Software Engineer",
       company: "ScreenCloud",
       period: "Sep 2021 - Jan 2025",
@@ -45,6 +34,17 @@ export const portfolioData = {
         "Scaled service to 1.2M concurrent users, 5,000 transactions/sec",
         "Contributed to 109% ARR growth from $11M to $23M",
         "Expanded platform support to Samsung Tizen, LG WebOS",
+      ],
+    },
+    {
+      title: "IT College Support Services Student Assistant",
+      company: "California State University, Fullerton",
+      period: "May 2025 - Present",
+      location: "Fullerton, California",
+      highlights: [
+        "Configured and deployed on-premise HPC server for academic use",
+        "Automated internal workflows and documentation",
+        "Linux server administration and network troubleshooting",
       ],
     },
     {
@@ -132,8 +132,8 @@ export const portfolioData = {
       category: "AI/ML",
       year: "2024",
       status: "Live",
-      githubUrl: "https://github.com",
-      liveUrl: "https://example.com",
+      githubUrl: "",
+      liveUrl: "https://www.suitcube.com/en/tailor-made-suit-online-new/",
       highlights: [
         "AI pose detection",
         "Automated image capture",
@@ -379,14 +379,14 @@ export const portfolioData = {
       school: "Thammasat University",
       period: "June 2019",
       location: "Bangkok, Thailand",
-      honors: "Second-class honors, Gold medal",
-      note: "Top 3 university in Thailand",
+      honors: "Gold Medal (Highest GPA in graduating class)",
+      // note: "Top 3 university in Thailand",
     },
   ],
   expertise: [
     { name: "Full-Stack Development", level: 98 },
     { name: "System Architecture", level: 95 },
     { name: "Team Leadership", level: 92 },
-    { name: "AI/ML Integration", level: 88 },
+    { name: "AI/ML Integration", level: 65 },
   ],
 };

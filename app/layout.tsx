@@ -1,3 +1,4 @@
+import Analytics from "@/components/analytics";
 import type { Metadata } from "next";
 import { Geist, Inter } from "next/font/google";
 import type React from "react";
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
     title: "Ken Wuttisasiwat - Full-Stack Software Engineer",
     description:
       "Experienced full-stack software engineer with 6+ years of expertise in modern web technologies.",
-    url: "https://kenwuttisasiwat.dev",
+    url: "https://kennaruk.github.io",
     siteName: "Ken Wuttisasiwat Portfolio",
     locale: "en_US",
     type: "website",
@@ -48,7 +49,6 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  generator: "v0.dev",
 };
 
 export default function RootLayout({
@@ -95,6 +95,7 @@ export default function RootLayout({
         style={{ overscrollBehaviorY: "none" }}
         className={`${geist.variable} ${inter.variable}`}
       >
+        <Analytics />
         {children}
       </body>
     </html>
