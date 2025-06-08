@@ -387,6 +387,32 @@ export const portfolioData = {
       ],
       featured: false,
     },
+    {
+      id: 10,
+      title: "RCST Webinar System",
+      description:
+        "A comprehensive web platform for the Royal College of Surgeons of Thailand (RCST) to facilitate surgeon registration, examination scheduling, and license management. The system enables doctors to sign up, schedule their licensing examinations, and receive results. Administrators can manage users, educational resources, examination dates and venues, and publish pass/fail results. Built with a modern stack to ensure reliability, scalability, and security for critical medical certification workflows.",
+      images: [
+        "/project/rcst-webinar/01-rcst-webinar.png",
+        "/project/rcst-webinar/02-rcst-webinar.png",
+        "/project/rcst-webinar/03-rcst-webinar.png",
+      ],
+      technologies: ["TypeScript", "React", "GCP", "Firebase", "PostgreSQL"],
+      category: "Full-Stack",
+      year: "2023",
+      status: "Live",
+      liveUrl: "https://www.basicscience-rcst.com/",
+      highlights: [
+        "Developed secure user registration and authentication for surgeon candidates and administrators",
+        "Implemented scheduling and management of examination dates, venues, and resources",
+        "Enabled real-time announcement of examination results (pass/fail) to candidates",
+        "Built robust admin dashboard for managing users, educational content, and exam logistics",
+        "Leveraged GCP and Firebase for scalable backend and real-time data updates",
+        "Integrated PostgreSQL for reliable data storage and complex queries",
+        "Ensured compliance with privacy and security standards for sensitive medical data",
+      ],
+      featured: false,
+    },
   ],
   skillCategories: [
     {
