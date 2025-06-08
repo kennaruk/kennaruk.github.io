@@ -10,6 +10,8 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import { portfolioData } from "@/data/portfolio-data";
+import { logEvent } from "firebase/analytics";
 import {
   ArrowLeft,
   ChevronLeft,
@@ -22,220 +24,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-
-// Extended projects data with multiple images and nullable fields
-const allProjectsData = [
-  {
-    id: 1,
-    title: "E-Commerce Platform",
-    description:
-      "Full-stack e-commerce solution with real-time inventory management, payment processing, and advanced analytics dashboard for business insights.",
-    images: [
-      "/placeholder.svg?height=300&width=500",
-      "/placeholder.svg?height=300&width=500",
-      "/placeholder.svg?height=300&width=500",
-    ],
-    technologies: [
-      "TypeScript",
-      "Next.js",
-      "GraphQL",
-      "PostgreSQL",
-      "Stripe",
-      "Redis",
-      "Docker",
-      "AWS",
-    ],
-    category: "Full-Stack",
-    year: "2024",
-    status: "Live",
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
-    highlights: [
-      "Real-time inventory",
-      "Payment processing",
-      "Admin dashboard",
-      "Analytics",
-    ],
-    featured: true,
-  },
-  {
-    id: 2,
-    title: "AI-Powered Analytics Dashboard",
-    description:
-      "Machine learning dashboard for business intelligence with predictive analytics, custom ML models, and real-time data visualization.",
-    images: ["/placeholder.svg?height=300&width=500"],
-    technologies: [
-      "React",
-      "Python",
-      "TensorFlow",
-      "FastAPI",
-      "MongoDB",
-      "Docker",
-      "Kubernetes",
-    ],
-    category: "AI/ML",
-    year: "2023",
-    status: "Live",
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
-    highlights: [
-      "Predictive analytics",
-      "Real-time data",
-      "Custom ML models",
-      "Data visualization",
-    ],
-    featured: true,
-  },
-  {
-    id: 3,
-    title: "Mobile Banking App",
-    description:
-      "Secure mobile banking application with biometric authentication, real-time transactions, and comprehensive security compliance.",
-    images: [
-      "/placeholder.svg?height=300&width=500",
-      "/placeholder.svg?height=300&width=500",
-    ],
-    technologies: [
-      "React Native",
-      "Node.js",
-      "Express",
-      "MySQL",
-      "JWT",
-      "Biometrics",
-      "AWS",
-    ],
-    category: "Mobile",
-    year: "2023",
-    // status: null, // Example of nullable field
-    githubUrl: "https://github.com",
-    // liveUrl: null, // Example of nullable field
-    highlights: [
-      "Biometric auth",
-      "Real-time transactions",
-      "Security compliance",
-      "Cross-platform",
-    ],
-    featured: true,
-  },
-  {
-    id: 4,
-    title: "Microservices Architecture",
-    description:
-      "Scalable microservices platform handling 1M+ requests daily with auto-scaling, monitoring, and high availability infrastructure.",
-    // images: null, // Example of nullable field
-    technologies: [
-      "Go",
-      "Kubernetes",
-      "Docker",
-      "gRPC",
-      "Prometheus",
-      "Grafana",
-      "Redis",
-    ],
-    category: "DevOps",
-    year: "2022",
-    status: "Live",
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
-    highlights: [
-      "Auto-scaling",
-      "1M+ requests/day",
-      "High availability",
-      "Monitoring",
-    ],
-    featured: false,
-  },
-  {
-    id: 5,
-    title: "Blockchain DeFi Platform",
-    description:
-      "Decentralized finance platform with smart contracts, yield farming, and comprehensive DeFi protocols for cryptocurrency trading.",
-    images: ["/placeholder.svg?height=300&width=500"],
-    technologies: [
-      "Solidity",
-      "Web3.js",
-      "React",
-      "Hardhat",
-      "IPFS",
-      "MetaMask",
-    ],
-    category: "Blockchain",
-    year: "2022",
-    status: "Live",
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
-    highlights: [
-      "Smart contracts",
-      "Yield farming",
-      "DeFi protocols",
-      "Cryptocurrency",
-    ],
-    featured: false,
-  },
-  {
-    id: 6,
-    title: "Real-time Chat Platform",
-    description:
-      "Scalable chat platform with video calls, file sharing, end-to-end encryption, and support for thousands of concurrent users.",
-    images: [
-      "/placeholder.svg?height=300&width=500",
-      "/placeholder.svg?height=300&width=500",
-    ],
-    technologies: ["Socket.io", "WebRTC", "Node.js", "Redis", "MongoDB", "AWS"],
-    category: "Real-time",
-    year: "2021",
-    status: "Live",
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
-    highlights: [
-      "End-to-end encryption",
-      "Video calls",
-      "File sharing",
-      "Scalable",
-    ],
-    featured: false,
-  },
-  {
-    id: 7,
-    title: "Task Management System",
-    description:
-      "Comprehensive project management tool with team collaboration, time tracking, and advanced reporting features.",
-    // images: null, // Example of nullable field
-    technologies: ["Vue.js", "Node.js", "PostgreSQL", "Socket.io", "Docker"],
-    category: "Full-Stack",
-    year: "2021",
-    // status: null, // Example of nullable field
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
-    highlights: [
-      "Team collaboration",
-      "Time tracking",
-      "Advanced reporting",
-      "Real-time updates",
-    ],
-    featured: false,
-  },
-  {
-    id: 8,
-    title: "IoT Monitoring Dashboard",
-    description:
-      "Internet of Things monitoring system for industrial equipment with real-time sensor data and predictive maintenance.",
-    images: ["/placeholder.svg?height=300&width=500"],
-    // technologies: null, // Example of nullable field
-    category: "IoT",
-    year: "2020",
-    status: "Live",
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
-    highlights: [
-      "Real-time monitoring",
-      "Predictive maintenance",
-      "Sensor integration",
-      "Industrial IoT",
-    ],
-    featured: false,
-  },
-];
+import { analytics } from "../utils/firebase";
 
 export default function ProjectsPage() {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -246,10 +35,10 @@ export default function ProjectsPage() {
 
   const categories = [
     "All",
-    ...Array.from(new Set(allProjectsData.map((p) => p.category))),
+    ...Array.from(new Set(portfolioData.projects.map((p) => p.category))),
   ];
 
-  const filteredProjects = allProjectsData.filter((project) => {
+  const filteredProjects = portfolioData.projects.filter((project) => {
     const matchesCategory =
       selectedCategory === "All" || project.category === selectedCategory;
     const matchesSearch =
@@ -341,8 +130,8 @@ export default function ProjectsPage() {
                   onClick={() => setSelectedCategory(category)}
                   className={
                     selectedCategory === category
-                      ? "bg-white font-medium text-black hover:bg-gray-200"
-                      : "border-gray-600 text-white transition-all duration-300 hover:bg-white hover:text-black"
+                      ? "bg-slate-200 font-medium text-black hover:bg-gray-200"
+                      : "border-gray-600 text-gray-500 transition-all duration-300 hover:bg-white hover:text-gray-800"
                   }
                 >
                   <Filter className="mr-2 h-4 w-4" />
@@ -373,7 +162,7 @@ export default function ProjectsPage() {
                         alt={`${project.title} - Image ${currentImg + 1}`}
                         width={500}
                         height={300}
-                        className="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-110"
+                        className="h-48 w-full object-contain transition-transform duration-300 group-hover:scale-110"
                       />
 
                       {/* Image Navigation - Only show if multiple images */}
@@ -425,12 +214,12 @@ export default function ProjectsPage() {
                     {/* Status and Featured Badges */}
                     <div className="absolute right-4 top-4 flex flex-col gap-2">
                       {project.status && (
-                        <Badge className="bg-blue-600 text-white">
+                        <Badge className="flex items-center justify-center bg-blue-600 text-center text-white">
                           {project.status}
                         </Badge>
                       )}
                       {project.featured && (
-                        <Badge className="bg-cyan-600 text-white">
+                        <Badge className="flex items-center justify-center bg-cyan-600 text-center text-white">
                           Featured
                         </Badge>
                       )}
@@ -503,6 +292,20 @@ export default function ProjectsPage() {
                             <Button
                               size="sm"
                               className="bg-white font-medium text-black hover:bg-gray-200"
+                              onClick={() => {
+                                if (analytics) {
+                                  logEvent(
+                                    analytics,
+                                    "live_demo_button_click",
+                                    {
+                                      label: "Live Demo Button",
+                                      project: project.title,
+                                      location: "Projects Page",
+                                    },
+                                  );
+                                }
+                                window.open(project.liveUrl, "_blank");
+                              }}
                             >
                               <ExternalLink className="mr-2 h-4 w-4" />
                               Live Demo

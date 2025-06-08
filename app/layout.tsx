@@ -1,7 +1,9 @@
 import Analytics from "@/components/analytics";
+import { portfolioData } from "@/data/portfolio-data";
 import type { Metadata } from "next";
 import { Geist, Inter } from "next/font/google";
 import type React from "react";
+
 import "./globals.css";
 
 const geist = Geist({
@@ -21,13 +23,13 @@ export const metadata: Metadata = {
     "Experienced full-stack software engineer with 6+ years of expertise in TypeScript, React, Node.js, and modern web technologies. Founder of Techgrity.",
   keywords:
     "Ken Wuttisasiwat, Full-Stack Developer, Software Engineer, TypeScript, React, Node.js, GraphQL, Thailand, Techgrity",
-  authors: [{ name: "Ken Wuttisasiwat" }],
-  creator: "Ken Wuttisasiwat",
+  authors: [{ name: portfolioData.personalInfo.name }],
+  creator: portfolioData.personalInfo.name,
   openGraph: {
     title: "Ken Wuttisasiwat - Full-Stack Software Engineer",
     description:
       "Experienced full-stack software engineer with 6+ years of expertise in modern web technologies.",
-    url: "https://kennaruk.github.io",
+    url: portfolioData.personalInfo.website,
     siteName: "Ken Wuttisasiwat Portfolio",
     locale: "en_US",
     type: "website",
@@ -69,14 +71,14 @@ export default function RootLayout({
               jobTitle: "Full-Stack Software Engineer",
               description:
                 "Experienced full-stack software engineer with 6+ years of expertise in TypeScript, React, Node.js, and modern web technologies.",
-              url: "https://kenwuttisasiwat.dev",
+              url: portfolioData.personalInfo.website,
               sameAs: [
-                "https://github.com/kenwuttisasiwat",
-                "https://linkedin.com/in/kenwuttisasiwat",
+                portfolioData.personalInfo.github,
+                portfolioData.personalInfo.linkedin,
               ],
               worksFor: {
                 "@type": "Organization",
-                name: "Techgrity",
+                name: "California State University, Fullerton",
               },
               knowsAbout: [
                 "TypeScript",

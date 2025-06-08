@@ -60,6 +60,15 @@ const SectionHeader = ({
   </div>
 );
 
+type Section =
+  | "Hero"
+  | "About"
+  | "Experience"
+  | "Projects"
+  | "Skills"
+  | "Achievements"
+  | "Contact";
+
 export default function Portfolio() {
   const [currentProject, setCurrentProject] = useState(0);
   const [currentImageIndex, setCurrentImageIndex] = useState<{
@@ -135,6 +144,46 @@ export default function Portfolio() {
       window.scrollTo({ top: elementPosition, behavior: "smooth" });
       router.push(`#${sectionId}`);
     }
+  };
+
+  const onGithubButtonClicked = (section: Section) => {
+    if (analytics) {
+      logEvent(analytics, "github_button_click", {
+        label: "Github Button",
+        location: `${section} Section`,
+      });
+    }
+    window.open(portfolioData.personalInfo.github, "_blank");
+  };
+
+  const onEmailButtonClicked = (section: Section) => {
+    if (analytics) {
+      logEvent(analytics, "email_button_click", {
+        label: "Email Button",
+        location: `${section} Section`,
+      });
+    }
+    window.open(`mailto:${portfolioData.personalInfo.email}`);
+  };
+
+  const onLinkedinButtonClicked = (section: Section) => {
+    if (analytics) {
+      logEvent(analytics, "linkedin_button_click", {
+        label: "Linkedin Button",
+        location: `${section} Section`,
+      });
+    }
+    window.open(portfolioData.personalInfo.linkedin, "_blank");
+  };
+
+  const onMediumButtonClicked = (section: Section) => {
+    if (analytics) {
+      logEvent(analytics, "medium_button_click", {
+        label: "Medium Button",
+        location: `${section} Section`,
+      });
+    }
+    window.open(portfolioData.personalInfo.medium, "_blank");
   };
 
   return (
@@ -238,14 +287,33 @@ export default function Portfolio() {
               <Award className="mr-2 h-4 w-4" />
               6+ Years Experience
             </Badge>
+            <button
+              type="button"
+              className="group inline-block transition"
+              onClick={() => {
+                if (analytics) {
+                  logEvent(analytics, "techgrity_badge_click", {
+                    label: "Founder, Techgrity Badge",
+                    location: "Hero Section",
+                  });
+                }
+                window.open("https://techgrity.github.io", "_blank");
+              }}
+            >
+              <Badge
+                variant="secondary"
+                className="border-gray-600 bg-gray-800 px-4 py-2 text-lg text-blue-300 transition-all duration-200 group-hover:scale-105 group-hover:border-blue-400 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-cyan-400 group-hover:text-white group-hover:shadow-lg"
+              >
+                <Code className="mr-2 h-4 w-4 transition group-hover:text-white" />
+                Founder, Techgrity
+              </Badge>
+            </button>
           </div>
-          <div className="flex flex-col justify-center gap-2 md:flex-row">
+          <div className="grid grid-cols-2 gap-2 px-4 md:flex md:flex-row md:justify-center">
             <Button
               size="lg"
-              className="bg-white font-medium text-black transition-all duration-300 hover:bg-gray-200"
-              onClick={() =>
-                window.open(portfolioData.personalInfo.github, "_blank")
-              }
+              className="w-full bg-white font-medium text-black transition-all duration-300 hover:bg-gray-200 md:w-auto"
+              onClick={() => onGithubButtonClicked("Hero")}
             >
               <Github className="h-5 w-5" />
               GitHub
@@ -253,30 +321,24 @@ export default function Portfolio() {
             <Button
               size="lg"
               variant="outline"
-              className="bg-white font-medium text-black transition-all duration-300 hover:bg-gray-200"
-              onClick={() =>
-                window.open(`mailto:${portfolioData.personalInfo.email}`)
-              }
+              className="w-full bg-white font-medium text-black transition-all duration-300 hover:bg-gray-200 md:w-auto"
+              onClick={() => onEmailButtonClicked("Hero")}
             >
               <Mail className="h-5 w-5" />
               Contact Me
             </Button>
             <Button
               size="lg"
-              className="bg-white font-medium text-black transition-all duration-300 hover:bg-gray-200"
-              onClick={() =>
-                window.open(portfolioData.personalInfo.linkedin, "_blank")
-              }
+              className="w-full bg-white font-medium text-black transition-all duration-300 hover:bg-gray-200 md:w-auto"
+              onClick={() => onLinkedinButtonClicked("Hero")}
             >
               <Linkedin className="h-5 w-5" />
               Linkedin
             </Button>
             <Button
               size="lg"
-              className="bg-white font-medium text-black transition-all duration-300 hover:bg-gray-200"
-              onClick={() =>
-                window.open(portfolioData.personalInfo.medium, "_blank")
-              }
+              className="w-full bg-white font-medium text-black transition-all duration-300 hover:bg-gray-200 md:w-auto"
+              onClick={() => onMediumButtonClicked("Hero")}
             >
               Medium Blog
             </Button>
@@ -430,9 +492,12 @@ export default function Portfolio() {
 
                   return (
                     <div key={project.id} className="w-full flex-shrink-0">
-                      <Card className="mx-4 border-gray-700 bg-gray-900/50 backdrop-blur-md">
+                      <Card
+                        className="mx-4 flex h-full max-h-[80vh] flex-col justify-center border-gray-700 bg-gray-900/50 backdrop-blur-md"
+                        style={{ maxHeight: "80vh" }}
+                      >
                         <div className="grid gap-6 md:grid-cols-2">
-                          <div className="relative overflow-hidden rounded-l-lg">
+                          <div className="relative flex flex-col justify-center overflow-hidden rounded-l-lg">
                             <div className="relative">
                               <Image
                                 src={
@@ -442,7 +507,7 @@ export default function Portfolio() {
                                 alt={`${project.title} - Image ${currentImg + 1}`}
                                 width={500}
                                 height={300}
-                                className="h-64 w-full object-cover md:h-full"
+                                className="h-64 w-full rounded-md object-contain md:h-full"
                               />
 
                               {projectImages.length > 1 && (
@@ -581,6 +646,20 @@ export default function Portfolio() {
                                     <Button
                                       size="sm"
                                       className="bg-white font-medium text-black hover:bg-gray-200"
+                                      onClick={() => {
+                                        if (analytics) {
+                                          logEvent(
+                                            analytics,
+                                            "live_demo_button_click",
+                                            {
+                                              label: "Live Demo Button",
+                                              project: project.title,
+                                              location: "Projects Section",
+                                            },
+                                          );
+                                        }
+                                        window.open(project.liveUrl, "_blank");
+                                      }}
                                     >
                                       <ExternalLink className="mr-2 h-4 w-4" />
                                       Live Demo
@@ -635,6 +714,14 @@ export default function Portfolio() {
               <Button
                 size="lg"
                 className="bg-white font-medium text-black hover:bg-gray-200"
+                onClick={() => {
+                  if (analytics) {
+                    logEvent(analytics, "view_all_projects_click", {
+                      label: "View All Projects Button",
+                      location: "Projects Section",
+                    });
+                  }
+                }}
               >
                 View All Projects
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -814,7 +901,10 @@ export default function Portfolio() {
             {/* Contact Information */}
             <div className="space-y-6">
               <div className="grid gap-6 md:grid-cols-2">
-                <Card className="border-gray-700 bg-gray-900/50 backdrop-blur-md">
+                <Card
+                  className="border-gray-700 bg-gray-900/50 backdrop-blur-md transition hover:cursor-pointer hover:bg-gray-800/80"
+                  onClick={() => onEmailButtonClicked("Contact")}
+                >
                   <CardContent className="p-6 text-center">
                     <Mail className="mx-auto mb-4 h-12 w-12 text-blue-400" />
                     <h3 className="mb-2 font-semibold text-white">Email</h3>
@@ -824,7 +914,10 @@ export default function Portfolio() {
                   </CardContent>
                 </Card>
 
-                <Card className="border-gray-700 bg-gray-900/50 backdrop-blur-md">
+                <Card
+                  className="border-gray-700 bg-gray-900/50 backdrop-blur-md transition hover:cursor-pointer hover:bg-gray-800/80"
+                  onClick={() => onLinkedinButtonClicked("Contact")}
+                >
                   <CardContent className="p-6 text-center">
                     <Linkedin className="mx-auto mb-4 h-12 w-12 text-blue-500" />
                     <h3 className="mb-2 font-semibold text-white">LinkedIn</h3>
@@ -844,7 +937,10 @@ export default function Portfolio() {
                   </CardContent>
                 </Card>
 
-                <Card className="border-gray-700 bg-gray-900/50 backdrop-blur-md">
+                <Card
+                  className="border-gray-700 bg-gray-900/50 backdrop-blur-md transition hover:cursor-pointer hover:bg-gray-800/80"
+                  onClick={() => onGithubButtonClicked("Contact")}
+                >
                   <CardContent className="p-6 text-center">
                     <Github className="mx-auto mb-4 h-12 w-12 text-white" />
                     <h3 className="mb-2 font-semibold text-white">Github</h3>
