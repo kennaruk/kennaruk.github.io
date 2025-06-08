@@ -579,7 +579,16 @@ export default function Portfolio() {
                                 </span>
                               )}
                             </div>
-                            <p className="mb-6 text-gray-300">
+                            <p
+                              className="mb-6 line-clamp-3 text-gray-300 md:line-clamp-6"
+                              style={{
+                                display: "-webkit-box",
+                                WebkitLineClamp: 3,
+                                WebkitBoxOrient: "vertical",
+                                overflow: "hidden",
+                                textOverflow: "ellipsis",
+                              }}
+                            >
                               {project.description}
                             </p>
                             <div className="space-y-4">
