@@ -413,6 +413,35 @@ export const portfolioData = {
       ],
       featured: false,
     },
+    {
+      id: 11,
+      title: "Roo Pai",
+      description:
+        "Semifinalist (top 10 out of 2500+ teams globally) in the IBM Call For Code Hackathon. Invented and developed a pre & post worldwide disaster solution platform to aid communities before, during, and after disasters. The platform leverages IBM Cloud, Watson NLU, Android, Java, Docker, and MongoDB to provide real-time information, resource coordination, and communication for affected populations and responders.",
+      images: ["/project/roopai.gif"],
+      technologies: [
+        "IBM Cloud",
+        "Watson NLU",
+        "Android",
+        "Java",
+        "Docker",
+        "MongoDB",
+      ],
+      category: "Full-Stack",
+      year: "2019",
+      status: "Prototype",
+      liveUrl: "https://www.youtube.com/watch?v=avGrnWrXi24",
+      highlights: [
+        "Designed and implemented a scalable disaster management platform for global use",
+        "Integrated real-time data feeds and communication tools for disaster response",
+        "Utilized IBM Cloud services and Watson NLU for backend infrastructure, deployment, and natural language understanding",
+        "Developed Android application for on-the-ground user access and reporting",
+        "Employed Docker for containerized deployment and MongoDB for flexible data storage",
+        "Leveraged Watson NLU to analyze and extract insights from user reports and disaster-related communications",
+        "Recognized as a top 10 semifinalist from over 2500 teams worldwide in the IBM Call For Code Hackathon",
+      ],
+      featured: false,
+    },
   ],
   skillCategories: [
     {
