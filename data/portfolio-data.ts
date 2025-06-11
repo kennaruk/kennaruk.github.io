@@ -7,7 +7,7 @@ export const portfolioData = {
   personalInfo: {
     name: "Ken Wuttisasiwat",
     title: "Senior Full-Stack Engineer",
-    subtitle: `${yearsOfExperience}+ years of experience scaling global SaaS platforms`,
+    subtitle: `${yearsOfExperience()}+ years of experience scaling global SaaS platforms`,
     company: "Techgrity",
     location: "Los Angeles, California",
     email: "kennw.dev@gmail.com",
