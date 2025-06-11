@@ -12,7 +12,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { portfolioData } from "@/data/portfolio-data";
+import { portfolioData, yearsOfExperience } from "@/data/portfolio-data";
 import { logEvent } from "firebase/analytics";
 import {
   ArrowRight,
@@ -285,7 +285,7 @@ export default function Portfolio() {
               className="border-gray-600 bg-gray-800 px-4 py-2 text-lg text-gray-300"
             >
               <Award className="mr-2 h-4 w-4" />
-              6+ Years Experience
+              {yearsOfExperience()}+ Years Experience
             </Badge>
             <button
               type="button"

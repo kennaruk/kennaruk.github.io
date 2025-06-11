@@ -33,12 +33,21 @@ export const metadata: Metadata = {
     siteName: "Ken Wuttisasiwat Portfolio",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: `${portfolioData.personalInfo.website}/og-image.png`,
+        width: 1200,
+        height: 630,
+        alt: "Ken Wuttisasiwat Portfolio",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Ken Wuttisasiwat - Full-Stack Software Engineer",
     description:
       "Experienced full-stack software engineer with 6+ years of expertise in modern web technologies.",
+    images: [`${portfolioData.personalInfo.website}/og-image.png`],
   },
   robots: {
     index: true,
