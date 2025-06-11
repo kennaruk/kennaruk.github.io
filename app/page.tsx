@@ -876,8 +876,9 @@ export default function Portfolio() {
                       </Badge>
                     </div>
                     <p className="mb-4 text-sm text-gray-300">
-                      Senior Full-Stack Engineer with 6+ years of experience,
-                      and proven track record in scaling global platforms.
+                      Senior Full-Stack Engineer with {yearsOfExperience()}+
+                      years of experience, and proven track record in scaling
+                      global platforms.
                     </p>
                     <div className="flex space-x-3">
                       <Button

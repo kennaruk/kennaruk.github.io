@@ -1,5 +1,5 @@
 import Analytics from "@/components/analytics";
-import { portfolioData } from "@/data/portfolio-data";
+import { portfolioData, yearsOfExperience } from "@/data/portfolio-data";
 import type { Metadata } from "next";
 import { Geist, Inter } from "next/font/google";
 import type React from "react";
@@ -17,18 +17,15 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title:
-    "Ken Wuttisasiwat - Full-Stack Software Engineer | 6+ Years Experience",
-  description:
-    "Experienced full-stack software engineer with 6+ years of expertise in TypeScript, React, Node.js, and modern web technologies. Founder of Techgrity.",
+  title: `Ken Wuttisasiwat - Full-Stack Software Engineer | ${yearsOfExperience()}+ Years Experience`,
+  description: `Experienced full-stack software engineer with ${yearsOfExperience()}+ years of expertise in TypeScript, React, Node.js, and modern web technologies. Founder of Techgrity.`,
   keywords:
     "Ken Wuttisasiwat, Full-Stack Developer, Software Engineer, TypeScript, React, Node.js, GraphQL, Thailand, Techgrity",
   authors: [{ name: portfolioData.personalInfo.name }],
   creator: portfolioData.personalInfo.name,
   openGraph: {
     title: "Ken Wuttisasiwat - Full-Stack Software Engineer",
-    description:
-      "Experienced full-stack software engineer with 6+ years of expertise in modern web technologies.",
+    description: `Experienced full-stack software engineer with ${yearsOfExperience()}+ years of expertise in modern web technologies.`,
     url: portfolioData.personalInfo.website,
     siteName: "Ken Wuttisasiwat Portfolio",
     locale: "en_US",
@@ -45,8 +42,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Ken Wuttisasiwat - Full-Stack Software Engineer",
-    description:
-      "Experienced full-stack software engineer with 6+ years of expertise in modern web technologies.",
+    description: `Experienced full-stack software engineer with ${yearsOfExperience()}+ years of expertise in modern web technologies.`,
     images: [`${portfolioData.personalInfo.website}/og-image.png`],
   },
   robots: {
@@ -78,8 +74,7 @@ export default function RootLayout({
               "@type": "Person",
               name: "Ken Wuttisasiwat",
               jobTitle: "Full-Stack Software Engineer",
-              description:
-                "Experienced full-stack software engineer with 6+ years of expertise in TypeScript, React, Node.js, and modern web technologies.",
+              description: `Experienced full-stack software engineer with ${yearsOfExperience()}+ years of expertise in TypeScript, React, Node.js, and modern web technologies.`,
               url: portfolioData.personalInfo.website,
               sameAs: [
                 portfolioData.personalInfo.github,
