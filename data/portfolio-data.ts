@@ -614,7 +614,7 @@ export const portfolioData = {
     {
       degree: "Master of Science in Computer Science",
       school: "California State University, Fullerton",
-      period: "Expected May 2026",
+      period: "2025 - 2026",
       location: "Fullerton, California",
       honors: "GPA 4.00/4.00",
       coursework: [
@@ -631,7 +631,7 @@ export const portfolioData = {
     {
       degree: "Bachelor of Science in Computer Science",
       school: "Thammasat University",
-      period: "June 2019",
+      period: "2015 - 2019",
       location: "Bangkok, Thailand",
       honors: "Gold Medal (Highest GPA in graduating class)",
       // note: "Top 3 university in Thailand",
