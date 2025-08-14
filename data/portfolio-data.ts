@@ -7,7 +7,7 @@ export const portfolioData = {
   personalInfo: {
     name: "Ken Wuttisasiwat",
     title: "Lead Software Engineer",
-    subtitle: `${yearsOfExperience()}+ years of experience scaling global SaaS platforms`,
+    subtitle: `${yearsOfExperience()}+ years of proficient full-stack development experience scaling global SaaS platforms`,
     company: "Techgrity",
     location: "Los Angeles, California",
     email: "kennw.dev@gmail.com",
@@ -32,7 +32,7 @@ export const portfolioData = {
   experience: [
     {
       title: "Lead Software Engineer",
-      company: "Mottie",
+      company: "Mottie AI",
       period: "May 2025 - Present",
       location: "Remote",
       highlights: [
