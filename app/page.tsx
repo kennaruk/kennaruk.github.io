@@ -278,7 +278,7 @@ export default function Portfolio() {
               className="border-gray-600 bg-gray-800 px-4 py-2 text-lg text-gray-300"
             >
               <Code className="mr-2 h-4 w-4" />
-              Senior Engineer
+              Lead Software Engineer
             </Badge>
             <Badge
               variant="secondary"
@@ -352,7 +352,7 @@ export default function Portfolio() {
           <SectionHeader
             icon={User}
             title="About Me"
-            subtitle="Senior engineer with global experience and academic excellence"
+            subtitle="Lead software engineer with global experience and academic excellence"
           />
 
           <div className="grid items-center gap-12 md:grid-cols-2">
@@ -876,9 +876,9 @@ export default function Portfolio() {
                       </Badge>
                     </div>
                     <p className="mb-4 text-sm text-gray-300">
-                      Senior Full-Stack Engineer with {yearsOfExperience()}+
-                      years of experience, and proven track record in scaling
-                      global platforms.
+                      Lead Software Engineer with {yearsOfExperience()}+ years
+                      of experience, and proven track record in scaling global
+                      platforms.
                     </p>
                     <div className="flex space-x-3">
                       <Button

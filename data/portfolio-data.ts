@@ -6,7 +6,7 @@ export const yearsOfExperience = () => {
 export const portfolioData = {
   personalInfo: {
     name: "Ken Wuttisasiwat",
-    title: "Senior Full-Stack Engineer",
+    title: "Lead Software Engineer",
     subtitle: `${yearsOfExperience()}+ years of experience scaling global SaaS platforms`,
     company: "Techgrity",
     location: "Los Angeles, California",
@@ -31,10 +31,20 @@ export const portfolioData = {
   ],
   experience: [
     {
+      title: "Lead Software Engineer",
+      company: "Mottie",
+      period: "May 2025 - Present",
+      location: "Remote",
+      highlights: [
+        "Designed, led, and developed a multi-language (Python, TypeScript, Kotlin) serverless backend using AWS Lambda, API Gateway, and DynamoDB, reducing manual HR workload by 60% and supporting real-time automation for users",
+        "Architected and deployed applied ML solutions with vector databases, Retrieval-Augmented Generation (RAG), Large Language Models (LLMs), and LangGraph, enabling intelligent document search and automated HR query resolution",
+      ],
+    },
+    {
       title: "Senior Software Engineer",
       company: "ScreenCloud",
       period: "Sep 2021 - Jan 2025",
-      location: "Remote",
+      location: "Bangkok, Thailand",
       highlights: [
         "Architected full-stack solution for 250,000+ active screens globally",
         "Scaled service to 1.2M concurrent users, 5,000 transactions/sec",
