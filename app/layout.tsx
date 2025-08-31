@@ -17,15 +17,15 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: `Ken Wuttisasiwat - Full-Stack Software Engineer | ${yearsOfExperience()}+ Years Experience`,
-  description: `Experienced full-stack software engineer with ${yearsOfExperience()}+ years of expertise in TypeScript, React, Node.js, and modern web technologies. Founder of Techgrity.`,
+  title: `Ken Wuttisasiwat - Lead Software Engineer Engineer | ${yearsOfExperience()}+ Years Experience`,
+  description: `Experienced Lead Software Engineer engineer with ${yearsOfExperience()}+ years of expertise in TypeScript, React, Node.js, and modern web technologies. Founder of Techgrity.`,
   keywords:
     "Ken Wuttisasiwat, Full-Stack Developer, Software Engineer, TypeScript, React, Node.js, GraphQL, Thailand, Techgrity",
   authors: [{ name: portfolioData.personalInfo.name }],
   creator: portfolioData.personalInfo.name,
   openGraph: {
-    title: "Ken Wuttisasiwat - Full-Stack Software Engineer",
-    description: `Experienced full-stack software engineer with ${yearsOfExperience()}+ years of expertise in modern web technologies.`,
+    title: "Ken Wuttisasiwat - Lead Software Engineer Engineer",
+    description: `Experienced Lead Software Engineer engineer with ${yearsOfExperience()}+ years of expertise in modern web technologies.`,
     url: portfolioData.personalInfo.website,
     siteName: "Ken Wuttisasiwat Portfolio",
     locale: "en_US",
@@ -41,8 +41,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ken Wuttisasiwat - Full-Stack Software Engineer",
-    description: `Experienced full-stack software engineer with ${yearsOfExperience()}+ years of expertise in modern web technologies.`,
+    title: "Ken Wuttisasiwat - Lead Software Engineer Engineer",
+    description: `Experienced Lead Software Engineer engineer with ${yearsOfExperience()}+ years of expertise in modern web technologies.`,
     images: [`${portfolioData.personalInfo.website}/og-image.png`],
   },
   robots: {
@@ -73,8 +73,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Person",
               name: "Ken Wuttisasiwat",
-              jobTitle: "Full-Stack Software Engineer",
-              description: `Experienced full-stack software engineer with ${yearsOfExperience()}+ years of expertise in TypeScript, React, Node.js, and modern web technologies.`,
+              jobTitle: "Lead Software Engineer Engineer",
+              description: `Experienced Lead Software Engineer engineer with ${yearsOfExperience()}+ years of expertise in TypeScript, React, Node.js, and modern web technologies.`,
               url: portfolioData.personalInfo.website,
               sameAs: [
                 portfolioData.personalInfo.github,

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import type React from "react";
 
 export const metadata: Metadata = {
-  title: "Projects - Ken Wuttisasiwat | Full-Stack Software Engineer",
+  title: "Projects - Ken Wuttisasiwat | Lead Software Engineer Engineer",
   description:
     "Explore the comprehensive portfolio of Ken Wuttisasiwat featuring full-stack applications, AI/ML projects, mobile apps, and more built with modern technologies.",
   keywords:
