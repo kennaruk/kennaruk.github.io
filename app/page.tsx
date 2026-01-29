@@ -277,6 +277,13 @@ export default function Portfolio() {
               variant="secondary"
               className="border-gray-600 bg-gray-800 px-4 py-2 text-lg text-gray-300"
             >
+              <GraduationCap className="mr-2 h-4 w-4" />
+              BS Computer Science
+            </Badge>
+            <Badge
+              variant="secondary"
+              className="border-gray-600 bg-gray-800 px-4 py-2 text-lg text-gray-300"
+            >
               <Code className="mr-2 h-4 w-4" />
               Lead Software Engineer
             </Badge>

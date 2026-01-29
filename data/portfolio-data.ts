@@ -41,6 +41,18 @@ export const portfolioData = {
       ],
     },
     {
+      title: "Software Engineer",
+      company: "California State University, Fullerton",
+      period: "Jan 2025 - May 2025",
+      location: "Fullerton, California",
+      highlights: [
+        "Configured and deployed on-premise HPC server for academic use",
+        "Automated internal workflows and documentation",
+        "Linux server administration and network troubleshooting",
+      ],
+    },
+
+    {
       title: "Senior Software Engineer",
       company: "ScreenCloud",
       period: "Sep 2021 - Jan 2025",
@@ -50,17 +62,6 @@ export const portfolioData = {
         "Scaled service to 1.2M concurrent users, 5,000 transactions/sec",
         "Contributed to 109% ARR growth from $11M to $23M",
         "Expanded platform support to Samsung Tizen, LG WebOS",
-      ],
-    },
-    {
-      title: "IT College Support Services Student Assistant",
-      company: "California State University, Fullerton",
-      period: "May 2025 - Present",
-      location: "Fullerton, California",
-      highlights: [
-        "Configured and deployed on-premise HPC server for academic use",
-        "Automated internal workflows and documentation",
-        "Linux server administration and network troubleshooting",
       ],
     },
     {
