@@ -57,6 +57,7 @@ export default function ResumePage() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-1.5 rounded-md px-2 py-1 text-xs text-gray-400 transition-colors hover:bg-gray-800 hover:text-white"
               >
+                <span>PDF</span>
                 <ExternalLink className="h-3.5 w-3.5" />
               </a>
             </div>
