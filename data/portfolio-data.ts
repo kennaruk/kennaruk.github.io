@@ -16,7 +16,8 @@ export const portfolioData = {
     github: "https://github.com/kennaruk",
     medium: "https://medium.com/@kennw.dev",
     resumeUrl:
-      "https://docs.google.com/document/d/1v4eDULp3I0bSNTFtwy2Zn702yDvlxfM8xySx6X-xo1A/edit?tab=t.0",
+      "https://docs.google.com/viewer?url=https://docs.google.com/document/d/1v4eDULp3I0bSNTFtwy2Zn702yDvlxfM8xySx6X-xo1A/export?format=pdf&embedded=true",
+    resumeGoogleDocId: "1v4eDULp3I0bSNTFtwy2Zn702yDvlxfM8xySx6X-xo1A",
     profileImage: "/profile.jpg?height=200&width=200",
     website: "https://kennaruk.github.io/",
   },

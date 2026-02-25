@@ -13,17 +13,17 @@ import { Input } from "@/components/ui/input";
 import { portfolioData } from "@/data/portfolio-data";
 import { logEvent } from "firebase/analytics";
 import {
-  ArrowLeft,
   ChevronLeft,
   ChevronRight,
   ExternalLink,
   Filter,
+  Folder,
   Github,
   Search,
 } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
+import { Navigation } from "../components/navigation";
 import { analytics } from "../utils/firebase";
 
 export default function ProjectsPage() {
@@ -72,26 +72,14 @@ export default function ProjectsPage() {
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-900"></div>
       </div>
 
-      {/* Navigation */}
-      <nav className="fixed left-1/2 top-6 z-50 -translate-x-1/2 transform">
-        <div className="rounded-full border border-gray-700 bg-gray-900/80 px-6 py-3 backdrop-blur-md">
-          <div className="flex items-center space-x-4">
-            <Link href="/" className="text-lg font-bold text-white">
-              K.
-            </Link>
-            <Link href="/">
-              <Button
-                variant="ghost"
-                size="sm"
-                className="rounded-full text-gray-300 hover:bg-gray-800 hover:text-white"
-              >
-                <ArrowLeft className="mr-2 h-4 w-4" />
-                Back to Home
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </nav>
+      <Navigation
+        title={
+          <span className="flex items-center gap-1.5 text-sm text-gray-400">
+            <Folder className="h-4 w-4 text-blue-400" />
+            Projects
+          </span>
+        }
+      />
 
       {/* Projects Page Content */}
       <div className="relative z-10 px-4 pb-20 pt-24">
