@@ -900,10 +900,7 @@ export default function Portfolio() {
                           }
 
                           // Open the resume
-                          window.open(
-                            portfolioData.personalInfo.resumeUrl,
-                            "_blank",
-                          );
+                          window.open("/resume", "_blank");
                         }}
                       >
                         <ExternalLink className="mr-2 h-4 w-4" />
