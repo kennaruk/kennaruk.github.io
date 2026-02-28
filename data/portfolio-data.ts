@@ -23,7 +23,7 @@ export const portfolioData = {
   },
   navigation: [
     { id: "home", label: "Home" },
-    { id: "about", label: "About" },
+    // { id: "about", label: "About" },
     { id: "experience", label: "Experience" },
     { id: "projects", label: "Projects" },
     { id: "skills", label: "Skills" },
