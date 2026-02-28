@@ -32,9 +32,7 @@ import {
   Mail,
   MapPin,
   Sparkles,
-  Target,
   Trophy,
-  User,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -294,7 +292,7 @@ export default function Portfolio() {
               <Award className="mr-2 h-4 w-4" />
               {yearsOfExperience()}+ Years Experience
             </Badge>
-            <button
+            {/* <button
               type="button"
               className="group inline-block transition"
               onClick={() => {
@@ -314,7 +312,7 @@ export default function Portfolio() {
                 <Code className="mr-2 h-4 w-4 transition group-hover:text-white" />
                 Founder, Techgrity
               </Badge>
-            </button>
+            </button> */}
           </div>
           <div className="grid grid-cols-2 gap-2 px-4 md:flex md:flex-row md:justify-center">
             <Button
@@ -354,7 +352,7 @@ export default function Portfolio() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="px-4 py-16">
+      {/* <section id="about" className="px-4 py-16">
         <div className="mx-auto max-w-7xl">
           <SectionHeader
             icon={User}
@@ -362,7 +360,9 @@ export default function Portfolio() {
             subtitle="Lead software engineer with global experience and academic excellence"
           />
 
-          <div className="grid items-center gap-12 md:grid-cols-2">
+
+
+          <div className="max-w-4xl mx-auto">
             <div className="space-y-6">
               <Card className="border-gray-700 bg-gray-900/50 backdrop-blur-md">
                 <CardHeader>
@@ -412,18 +412,47 @@ export default function Portfolio() {
                 </div>
               </div>
             </div>
+
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Experience Section */}
       <section id="experience" className="px-4 py-16">
         <div className="mx-auto max-w-7xl">
           <SectionHeader
             icon={Briefcase}
-            title="Professional Experience"
+            title="Education & Experience"
             subtitle="Building scalable solutions at leading technology companies"
           />
+
+          <div className="mx-auto mb-6 max-w-4xl">
+            <div className="space-y-6">
+              <Card className="border-gray-700 bg-gray-900/50 backdrop-blur-md">
+                <CardHeader>
+                  <CardTitle className="flex items-center text-white">
+                    <GraduationCap className="mr-3 h-6 w-6 text-blue-400" />
+                    Education
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4 text-gray-300">
+                  {portfolioData.education.map((edu, index) => (
+                    <div
+                      key={index}
+                      className="border-l-2 border-blue-400 pl-4"
+                    >
+                      <h4 className="font-semibold text-white">{edu.degree}</h4>
+                      <p className="text-blue-400">{edu.school}</p>
+                      <p className="text-sm text-gray-400">{edu.period}</p>
+                      {edu.honors && (
+                        <p className="text-sm text-cyan-400">{edu.honors}</p>
+                      )}
+                    </div>
+                  ))}
+                </CardContent>
+              </Card>
+            </div>
+          </div>
 
           <div className="mx-auto max-w-4xl">
             <div className="space-y-6">
@@ -748,7 +777,7 @@ export default function Portfolio() {
       </section>
 
       {/* Skills Section - 3x3 Grid */}
-      <section id="skills" className="px-4 py-16">
+      {/* <section id="skills" className="px-4 py-16">
         <div className="mx-auto max-w-7xl">
           <SectionHeader
             icon={Target}
@@ -793,7 +822,7 @@ export default function Portfolio() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Achievements Section */}
       <section id="achievements" className="px-4 py-16">
