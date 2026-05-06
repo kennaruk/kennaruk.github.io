@@ -41,22 +41,21 @@ export const portfolioData = {
         "Architected and deployed applied ML solutions with vector databases, Retrieval-Augmented Generation (RAG), Large Language Models (LLMs), and LangGraph, enabling intelligent document search and automated HR query resolution",
       ],
     },
-    {
-      title: "Software Engineer",
-      company: "California State University, Fullerton",
-      period: "Jan 2025 - May 2025",
-      location: "Fullerton, California",
-      highlights: [
-        "Configured and deployed on-premise HPC server for academic use",
-        "Automated internal workflows and documentation",
-        "Linux server administration and network troubleshooting",
-      ],
-    },
-
+    // {
+    //   title: "Software Engineer",
+    //   company: "California State University, Fullerton",
+    //   period: "Jan 2025 - May 2025",
+    //   location: "Fullerton, California",
+    //   highlights: [
+    //     "Configured and deployed on-premise HPC server for academic use",
+    //     "Automated internal workflows and documentation",
+    //     "Linux server administration and network troubleshooting",
+    //   ],
+    // },
     {
       title: "Senior Software Engineer",
       company: "ScreenCloud",
-      period: "Sep 2021 - Jan 2025",
+      period: "Sep 2021 - Feb 2025",
       location: "Bangkok, Thailand",
       highlights: [
         "Architected full-stack solution for 250,000+ active screens globally",
